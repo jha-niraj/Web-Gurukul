@@ -42,7 +42,6 @@ export function Footer() {
 
     return (
         <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-            {/* Newsletter Section */}
             <div className="border-b border-gray-700">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <motion.div
@@ -76,11 +75,8 @@ export function Footer() {
                     </motion.div>
                 </div>
             </div>
-
-            {/* Main Footer Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-                    {/* Brand Section */}
                     <motion.div
                         className="lg:col-span-2"
                         initial={{ opacity: 0, y: 20 }}
@@ -118,35 +114,35 @@ export function Footer() {
                             </div>
                         </div>
                     </motion.div>
-
-                    {/* Links Sections */}
-                    {Object.entries(footerLinks).map(([category, links], index) => (
-                        <motion.div
-                            key={category}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                        >
-                            <h3 className="text-lg font-semibold mb-4 capitalize text-white">{category}</h3>
-                            <ul className="space-y-3">
-                                {links.map((link) => (
-                                    <li key={link.name}>
-                                        <Link
-                                            href={link.href}
-                                            className="text-gray-300 hover:text-teal-400 transition-colors duration-300 text-sm"
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    ))}
+                    {
+                        Object.entries(footerLinks).map(([category, links], index) => (
+                            <motion.div
+                                key={category}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                            >
+                                <h3 className="text-lg font-semibold mb-4 capitalize text-white">{category}</h3>
+                                <ul className="space-y-3">
+                                    {
+                                        links.map((link) => (
+                                            <li key={link.name}>
+                                                <Link
+                                                    href={link.href}
+                                                    className="text-gray-300 hover:text-teal-400 transition-colors duration-300 text-sm"
+                                                >
+                                                    {link.name}
+                                                </Link>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </motion.div>
+                        ))
+                    }
                 </div>
             </div>
-
-            {/* Bottom Section */}
             <div className="border-t border-gray-700">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -159,7 +155,6 @@ export function Footer() {
                         >
                             <p className="text-gray-400 text-sm">© 2024 WebGurukul. All rights reserved. Made with ❤️ in Nepal.</p>
                         </motion.div>
-
                         <motion.div
                             className="flex items-center gap-4"
                             initial={{ opacity: 0 }}
@@ -167,15 +162,17 @@ export function Footer() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            {socialLinks.map((social) => (
-                                <Link
-                                    key={social.name}
-                                    href={social.href}
-                                    className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-teal-500 hover:to-cyan-500 rounded-lg flex items-center justify-center transition-all duration-300 group"
-                                >
-                                    <social.icon className="h-5 w-5 text-gray-400 group-hover:text-white" />
-                                </Link>
-                            ))}
+                            {
+                                socialLinks.map((social) => (
+                                    <Link
+                                        key={social.name}
+                                        href={social.href}
+                                        className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-teal-500 hover:to-cyan-500 rounded-lg flex items-center justify-center transition-all duration-300 group"
+                                    >
+                                        <social.icon className="h-5 w-5 text-gray-400 group-hover:text-white" />
+                                    </Link>
+                                ))
+                            }
                         </motion.div>
                     </div>
                 </div>

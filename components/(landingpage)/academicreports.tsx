@@ -17,7 +17,6 @@ const AcademicReports = () => {
 		<section className="py-16 sm:py-24 bg-white">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-					{/* Content */}
 					<motion.div
 						className="space-y-8"
 						initial={{ opacity: 0, x: -30 }}
@@ -44,32 +43,29 @@ const AcademicReports = () => {
 								analytics and keep parents informed with real-time updates.
 							</p>
 						</div>
-
-						{/* Capabilities List */}
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-							{capabilities.map((capability, index) => (
-								<motion.div
-									key={index}
-									className="flex items-center space-x-3"
-									initial={{ opacity: 0, x: -20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									viewport={{ once: true }}
-									transition={{ delay: index * 0.1 }}
-								>
-									<CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0" />
-									<span className="text-gray-700 font-medium text-sm sm:text-base">{capability}</span>
-								</motion.div>
-							))}
+							{
+								capabilities.map((capability, index) => (
+									<motion.div
+										key={index}
+										className="flex items-center space-x-3"
+										initial={{ opacity: 0, x: -20 }}
+										whileInView={{ opacity: 1, x: 0 }}
+										viewport={{ once: true }}
+										transition={{ delay: index * 0.1 }}
+									>
+										<CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0" />
+										<span className="text-gray-700 font-medium text-sm sm:text-base">{capability}</span>
+									</motion.div>
+								))
+							}
 						</div>
-
 						<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 							<Button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
 								Explore Academic Reports
 							</Button>
 						</motion.div>
 					</motion.div>
-
-					{/* Report Card Mockup */}
 					<motion.div
 						className="relative order-first lg:order-last"
 						initial={{ opacity: 0, x: 30 }}
@@ -77,21 +73,15 @@ const AcademicReports = () => {
 						viewport={{ once: true }}
 						transition={{ duration: 0.6, delay: 0.2 }}
 					>
-						{/* Background Elements */}
 						<div className="absolute -top-4 -right-4 w-48 sm:w-72 h-48 sm:h-72 bg-purple-100 rounded-3xl transform rotate-6"></div>
 						<div className="absolute -bottom-4 -left-4 w-48 sm:w-72 h-48 sm:h-72 bg-pink-100 rounded-3xl transform -rotate-6"></div>
-
-						{/* Main Report Card */}
 						<div className="relative bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
-							{/* Header */}
 							<div className="bg-gradient-to-r from-purple-500 to-purple-600 px-4 sm:px-6 py-6">
 								<div className="text-center">
 									<h3 className="text-white font-bold text-lg sm:text-xl mb-2">Janata Secondary School</h3>
 									<p className="text-purple-100 text-sm sm:text-base">Academic Report Card - 2024</p>
 								</div>
 							</div>
-
-							{/* Student Info */}
 							<div className="p-4 sm:p-6 border-b border-gray-100">
 								<div className="flex items-center space-x-3 sm:space-x-4">
 									<div className="w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
@@ -104,41 +94,38 @@ const AcademicReports = () => {
 									</div>
 								</div>
 							</div>
-
-							{/* Grades */}
 							<div className="p-4 sm:p-6 space-y-4">
 								<h5 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">Subject Performance</h5>
-
-								{[
-									{ subject: "Mathematics", grade: "A+", marks: "95/100", color: "green" },
-									{ subject: "Science", grade: "A", marks: "88/100", color: "blue" },
-									{ subject: "English", grade: "A", marks: "85/100", color: "blue" },
-									{ subject: "Nepali", grade: "A+", marks: "92/100", color: "green" },
-								].map((subject, index) => (
-									<motion.div
-										key={index}
-										className="flex items-center justify-between p-2 sm:p-3 bg-gray-50 rounded-xl"
-										initial={{ opacity: 0, y: 20 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										viewport={{ once: true }}
-										transition={{ delay: 0.5 + index * 0.1 }}
-									>
-										<div className="flex items-center space-x-2 sm:space-x-3">
-											<Award className={`w-4 sm:w-5 h-4 sm:h-5 text-${subject.color}-500`} />
-											<span className="font-medium text-gray-900 text-sm sm:text-base">{subject.subject}</span>
-										</div>
-										<div className="text-right">
-											<span
-												className={`px-2 sm:px-3 py-1 bg-${subject.color}-100 text-${subject.color}-800 text-xs sm:text-sm font-bold rounded-full`}
-											>
-												{subject.grade}
-											</span>
-											<p className="text-xs sm:text-sm text-gray-500 mt-1">{subject.marks}</p>
-										</div>
-									</motion.div>
-								))}
-
-								{/* Overall Performance */}
+								{
+									[
+										{ subject: "Mathematics", grade: "A+", marks: "95/100", color: "green" },
+										{ subject: "Science", grade: "A", marks: "88/100", color: "blue" },
+										{ subject: "English", grade: "A", marks: "85/100", color: "blue" },
+										{ subject: "Nepali", grade: "A+", marks: "92/100", color: "green" },
+									].map((subject, index) => (
+										<motion.div
+											key={index}
+											className="flex items-center justify-between p-2 sm:p-3 bg-gray-50 rounded-xl"
+											initial={{ opacity: 0, y: 20 }}
+											whileInView={{ opacity: 1, y: 0 }}
+											viewport={{ once: true }}
+											transition={{ delay: 0.5 + index * 0.1 }}
+										>
+											<div className="flex items-center space-x-2 sm:space-x-3">
+												<Award className={`w-4 sm:w-5 h-4 sm:h-5 text-${subject.color}-500`} />
+												<span className="font-medium text-gray-900 text-sm sm:text-base">{subject.subject}</span>
+											</div>
+											<div className="text-right">
+												<span
+													className={`px-2 sm:px-3 py-1 bg-${subject.color}-100 text-${subject.color}-800 text-xs sm:text-sm font-bold rounded-full`}
+												>
+													{subject.grade}
+												</span>
+												<p className="text-xs sm:text-sm text-gray-500 mt-1">{subject.marks}</p>
+											</div>
+										</motion.div>
+									))
+								}
 								<div className="pt-4 border-t border-gray-100">
 									<div className="grid grid-cols-2 gap-3 sm:gap-4">
 										<motion.div
@@ -165,8 +152,6 @@ const AcademicReports = () => {
 										</motion.div>
 									</div>
 								</div>
-
-								{/* Action Buttons */}
 								<div className="flex space-x-3 pt-4">
 									<Button size="sm" className="flex-1 bg-purple-600 hover:bg-purple-700 text-xs sm:text-sm">
 										<Download className="w-3 sm:w-4 h-3 sm:h-4 mr-2" />

@@ -38,11 +38,8 @@ const testimonials = [
 const Testimonials = () => {
     return (
         <section className="relative py-16 sm:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-            {/* Subtle dot pattern background */}
             <div className="absolute inset-0 bg-dot-pattern opacity-20"></div>
-
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
                 <motion.div
                     className="text-center mb-16 sm:mb-20"
                     initial={{ opacity: 0, y: 30 }}
@@ -68,104 +65,93 @@ const Testimonials = () => {
                         saying about our platform.
                     </p>
                 </motion.div>
-
-                {/* Stats Banner */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
-                    {[
-                        { icon: Users, value: "500+", label: "Schools Trust Us", color: "teal" },
-                        { icon: TrendingUp, value: "80%", label: "Time Saved", color: "cyan" },
-                        { icon: Star, value: "4.9", label: "Average Rating", color: "teal" },
-                        { icon: Clock, value: "24/7", label: "Support Available", color: "cyan" },
-                    ].map((stat, index) => (
-                        <motion.div
-                            key={index}
-                            className="text-center p-4 sm:p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            <div
-                                className={`w-10 sm:w-12 h-10 sm:h-12 bg-${stat.color}-100 rounded-xl flex items-center justify-center mx-auto mb-4`}
+                    {
+                        [
+                            { icon: Users, value: "500+", label: "Schools Trust Us", color: "teal" },
+                            { icon: TrendingUp, value: "80%", label: "Time Saved", color: "cyan" },
+                            { icon: Star, value: "4.9", label: "Average Rating", color: "teal" },
+                            { icon: Clock, value: "24/7", label: "Support Available", color: "cyan" },
+                        ].map((stat, index) => (
+                            <motion.div
+                                key={index}
+                                className="text-center p-4 sm:p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ scale: 1.05 }}
                             >
-                                <stat.icon className={`w-5 sm:w-6 h-5 sm:h-6 text-${stat.color}-600`} />
-                            </div>
-                            <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                            <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Testimonials Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
-                    {testimonials.map((testimonial, index) => (
-                        <motion.div
-                            key={index}
-                            className="relative bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 group"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            {/* Quote Icon */}
-                            <div className="absolute -top-4 left-6 sm:left-8">
-                                <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                                    <Quote className="w-4 h-4 text-white" />
+                                <div
+                                    className={`w-10 sm:w-12 h-10 sm:h-12 bg-${stat.color}-100 rounded-xl flex items-center justify-center mx-auto mb-4`}
+                                >
+                                    <stat.icon className={`w-5 sm:w-6 h-5 sm:h-6 text-${stat.color}-600`} />
                                 </div>
-                            </div>
-
-                            {/* Rating */}
-                            <div className="flex items-center space-x-1 mb-6">
-                                {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400 fill-current" />
-                                ))}
-                            </div>
-
-                            {/* Quote */}
-                            <blockquote className="text-gray-700 leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg font-medium">
-                                "{testimonial.quote}"
-                            </blockquote>
-
-                            {/* Author Info */}
-                            <div className="flex items-center space-x-3 sm:space-x-4 mb-6">
-                                <div className="relative">
-                                    <img
-                                        src={testimonial.image || "/placeholder.svg"}
-                                        alt={testimonial.name}
-                                        className="w-12 sm:w-16 h-12 sm:h-16 rounded-full object-cover border-4 border-gray-100"
-                                    />
-                                    <div className="absolute -bottom-1 -right-1 w-5 sm:w-6 h-5 sm:h-6 bg-teal-500 rounded-full flex items-center justify-center">
-                                        <CheckCircle className="w-2 sm:w-3 h-2 sm:h-3 text-white" />
+                                <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                                <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
+                            </motion.div>
+                        ))
+                    }
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
+                    {
+                        testimonials.map((testimonial, index) => (
+                            <motion.div
+                                key={index}
+                                className="relative bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 group"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ scale: 1.05 }}
+                            >
+                                <div className="absolute -top-4 left-6 sm:left-8">
+                                    <div className="w-8 h-8 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                                        <Quote className="w-4 h-4 text-white" />
                                     </div>
                                 </div>
-                                <div>
-                                    <h4 className="font-bold text-gray-900 text-base sm:text-lg">{testimonial.name}</h4>
-                                    <p className="text-teal-600 font-medium text-sm sm:text-base">{testimonial.position}</p>
-                                    <p className="text-gray-500 text-xs sm:text-sm">{testimonial.school}</p>
+                                <div className="flex items-center space-x-1 mb-6">
+                                    {
+                                        [...Array(testimonial.rating)].map((_, i) => (
+                                            <Star key={i} className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400 fill-current" />
+                                        ))
+                                    }
                                 </div>
-                            </div>
-
-                            {/* Stats */}
-                            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
-                                <div className="text-center">
-                                    <div className="text-xl sm:text-2xl font-bold text-teal-600">{testimonial.stats.students}</div>
-                                    <div className="text-xs sm:text-sm text-gray-500">Students</div>
+                                <blockquote className="text-gray-700 leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg font-medium">
+                                    "{testimonial.quote}"
+                                </blockquote>
+                                <div className="flex items-center space-x-3 sm:space-x-4 mb-6">
+                                    <div className="relative">
+                                        <img
+                                            src={testimonial.image || "/placeholder.svg"}
+                                            alt={testimonial.name}
+                                            className="w-12 sm:w-16 h-12 sm:h-16 rounded-full object-cover border-4 border-gray-100"
+                                        />
+                                        <div className="absolute -bottom-1 -right-1 w-5 sm:w-6 h-5 sm:h-6 bg-teal-500 rounded-full flex items-center justify-center">
+                                            <CheckCircle className="w-2 sm:w-3 h-2 sm:h-3 text-white" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-gray-900 text-base sm:text-lg">{testimonial.name}</h4>
+                                        <p className="text-teal-600 font-medium text-sm sm:text-base">{testimonial.position}</p>
+                                        <p className="text-gray-500 text-xs sm:text-sm">{testimonial.school}</p>
+                                    </div>
                                 </div>
-                                <div className="text-center">
-                                    <div className="text-xl sm:text-2xl font-bold text-cyan-600">{testimonial.stats.timeSaved}</div>
-                                    <div className="text-xs sm:text-sm text-gray-500">Time Saved</div>
+                                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
+                                    <div className="text-center">
+                                        <div className="text-xl sm:text-2xl font-bold text-teal-600">{testimonial.stats.students}</div>
+                                        <div className="text-xs sm:text-sm text-gray-500">Students</div>
+                                    </div>
+                                    <div className="text-center">
+                                        <div className="text-xl sm:text-2xl font-bold text-cyan-600">{testimonial.stats.timeSaved}</div>
+                                        <div className="text-xs sm:text-sm text-gray-500">Time Saved</div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            {/* Hover effect border */}
-                            <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-teal-200 transition-all duration-300"></div>
-                        </motion.div>
-                    ))}
+                                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-teal-200 transition-all duration-300"></div>
+                            </motion.div>
+                        ))
+                    }
                 </div>
-
-                {/* Enhanced CTA Section */}
                 <motion.div
                     className="text-center"
                     initial={{ opacity: 0, y: 30 }}
@@ -174,7 +160,6 @@ const Testimonials = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="relative bg-gradient-to-r from-teal-600 to-cyan-600 rounded-3xl p-8 sm:p-12 text-white overflow-hidden">
-                        {/* Background pattern */}
                         <div className="absolute inset-0 bg-dot-pattern opacity-20"></div>
 
                         <div className="relative z-10">

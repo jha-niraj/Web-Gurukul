@@ -65,7 +65,6 @@ const PricingSection = () => {
 	return (
 		<section className="py-24 bg-gradient-to-b from-white to-gray-50">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Header */}
 				<motion.div
 					className="text-center mb-20"
 					initial={{ opacity: 0, y: 30 }}
@@ -103,92 +102,87 @@ const PricingSection = () => {
 						setup costs.
 					</motion.p>
 				</motion.div>
-
-				{/* Pricing Cards */}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-					{pricingPlans.map((plan, index) => (
-						<motion.div
-							key={index}
-							className={`relative rounded-3xl border-2 p-8 ${plan.popular
-								? "border-emerald-500 bg-gradient-to-b from-emerald-50 to-white shadow-2xl scale-105"
-								: "border-gray-200 bg-white shadow-lg hover:shadow-xl"
-								} transition-all duration-300`}
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.6, delay: index * 0.1 }}
-							whileHover={{
-								scale: plan.popular ? 1.05 : 1.02,
-								transition: { type: "spring", stiffness: 300 },
-							}}
-						>
-							{/* Popular Badge */}
-							{plan.popular && (
-								<motion.div
-									className="absolute -top-4 left-1/2 transform -translate-x-1/2"
-									initial={{ opacity: 0, scale: 0 }}
-									whileInView={{ opacity: 1, scale: 1 }}
-									viewport={{ once: true }}
-									transition={{ delay: 0.5 + index * 0.1, type: "spring" }}
-								>
-									<div className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-										Most Popular
-									</div>
-								</motion.div>
-							)}
-
-							{/* Plan Header */}
-							<div className="text-center mb-8">
-								<motion.div
-									className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-${plan.color}-500 to-${plan.color}-600 flex items-center justify-center shadow-lg`}
-									whileHover={{
-										rotate: [0, -10, 10, 0],
-										transition: { duration: 0.3 },
-									}}
-								>
-									<plan.icon className="w-8 h-8 text-white" />
-								</motion.div>
-								<h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-								<p className="text-gray-600 mb-4">{plan.description}</p>
-								<div className="flex items-baseline justify-center">
-									<span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-									<span className="text-gray-600 ml-1">{plan.period}</span>
-								</div>
-							</div>
-
-							{/* Features List */}
-							<div className="space-y-4 mb-8">
-								{plan.features.map((feature, featureIndex) => (
+					{
+						pricingPlans.map((plan, index) => (
+							<motion.div
+								key={index}
+								className={`relative rounded-3xl border-2 p-8 ${plan.popular
+									? "border-emerald-500 bg-gradient-to-b from-emerald-50 to-white shadow-2xl scale-105"
+									: "border-gray-200 bg-white shadow-lg hover:shadow-xl"
+									} transition-all duration-300`}
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.6, delay: index * 0.1 }}
+								whileHover={{
+									scale: plan.popular ? 1.05 : 1.02,
+									transition: { type: "spring", stiffness: 300 },
+								}}
+							>
+								{
+									plan.popular && (
+										<motion.div
+											className="absolute -top-4 left-1/2 transform -translate-x-1/2"
+											initial={{ opacity: 0, scale: 0 }}
+											whileInView={{ opacity: 1, scale: 1 }}
+											viewport={{ once: true }}
+											transition={{ delay: 0.5 + index * 0.1, type: "spring" }}
+										>
+											<div className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+												Most Popular
+											</div>
+										</motion.div>
+									)
+								}
+								<div className="text-center mb-8">
 									<motion.div
-										key={featureIndex}
-										className="flex items-center space-x-3"
-										initial={{ opacity: 0, x: -20 }}
-										whileInView={{ opacity: 1, x: 0 }}
-										viewport={{ once: true }}
-										transition={{ delay: 0.7 + index * 0.1 + featureIndex * 0.05 }}
+										className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-${plan.color}-500 to-${plan.color}-600 flex items-center justify-center shadow-lg`}
+										whileHover={{
+											rotate: [0, -10, 10, 0],
+											transition: { duration: 0.3 },
+										}}
 									>
-										<Check className={`w-5 h-5 text-${plan.color}-500 flex-shrink-0`} />
-										<span className="text-gray-700">{feature}</span>
+										<plan.icon className="w-8 h-8 text-white" />
 									</motion.div>
-								))}
-							</div>
-
-							{/* CTA Button */}
-							<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-								<Button
-									className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${plan.popular
-										? "bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl"
-										: `bg-gradient-to-r from-${plan.color}-500 to-${plan.color}-600 hover:from-${plan.color}-600 hover:to-${plan.color}-700 text-white shadow-lg hover:shadow-xl`
-										}`}
-								>
-									{plan.popular ? "Start Free Trial" : "Get Started"}
-								</Button>
+									<h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+									<p className="text-gray-600 mb-4">{plan.description}</p>
+									<div className="flex items-baseline justify-center">
+										<span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+										<span className="text-gray-600 ml-1">{plan.period}</span>
+									</div>
+								</div>
+								<div className="space-y-4 mb-8">
+									{
+										plan.features.map((feature, featureIndex) => (
+											<motion.div
+												key={featureIndex}
+												className="flex items-center space-x-3"
+												initial={{ opacity: 0, x: -20 }}
+												whileInView={{ opacity: 1, x: 0 }}
+												viewport={{ once: true }}
+												transition={{ delay: 0.7 + index * 0.1 + featureIndex * 0.05 }}
+											>
+												<Check className={`w-5 h-5 text-${plan.color}-500 flex-shrink-0`} />
+												<span className="text-gray-700">{feature}</span>
+											</motion.div>
+										))
+									}
+								</div>
+								<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+									<Button
+										className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${plan.popular
+											? "bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl"
+											: `bg-gradient-to-r from-${plan.color}-500 to-${plan.color}-600 hover:from-${plan.color}-600 hover:to-${plan.color}-700 text-white shadow-lg hover:shadow-xl`
+											}`}
+									>
+										{plan.popular ? "Start Free Trial" : "Get Started"}
+									</Button>
+								</motion.div>
 							</motion.div>
-						</motion.div>
-					))}
+						))
+					}
 				</div>
-
-				{/* Money Back Guarantee */}
 				<motion.div
 					className="text-center"
 					initial={{ opacity: 0, y: 20 }}

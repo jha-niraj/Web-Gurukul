@@ -79,7 +79,6 @@ const FeaturesOverview = () => {
 	return (
 		<section className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Header */}
 				<motion.div
 					className="text-center mb-20"
 					initial={{ opacity: 0, y: 30 }}
@@ -117,8 +116,6 @@ const FeaturesOverview = () => {
 						schools. From student management to financial tracking, we've got you covered.
 					</motion.p>
 				</motion.div>
-
-				{/* Main Features Grid */}
 				<motion.div
 					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
 					variants={containerVariants}
@@ -126,75 +123,67 @@ const FeaturesOverview = () => {
 					whileInView="visible"
 					viewport={{ once: true }}
 				>
-					{features.map((feature, index) => (
-						<motion.div
-							key={index}
-							className="relative group cursor-pointer"
-							variants={itemVariants}
-							whileHover={{
-								scale: 1.05,
-								transition: { type: "spring", stiffness: 300 },
-							}}
-						>
-							{/* Card */}
-							<div
-								className={`relative p-8 rounded-3xl border border-gray-200 ${feature.bgColor} hover:shadow-2xl transition-all duration-500 h-full`}
+					{
+						features.map((feature, index) => (
+							<motion.div
+								key={index}
+								className="relative group cursor-pointer"
+								variants={itemVariants}
+								whileHover={{
+									scale: 1.05,
+									transition: { type: "spring", stiffness: 300 },
+								}}
 							>
-								{/* Background Gradient Overlay */}
-								<motion.div
-									className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}
-									initial={{ opacity: 0 }}
-									whileHover={{ opacity: 0.1 }}
-								/>
-
-								{/* Icon */}
-								<motion.div
-									className={`relative w-16 h-16 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300`}
-									whileHover={{
-										scale: 1.1,
-										rotate: [0, -10, 10, 0],
-										transition: { duration: 0.3 },
-									}}
+								<div
+									className={`relative p-8 rounded-3xl border border-gray-200 ${feature.bgColor} hover:shadow-2xl transition-all duration-500 h-full`}
 								>
-									<feature.icon className="w-8 h-8 text-white" />
-								</motion.div>
-
-								{/* Content */}
-								<div className="relative space-y-4">
-									<div className="flex items-center justify-between">
-										<h3 className="text-xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
-											{feature.title}
-										</h3>
-										<span className="text-xs font-medium text-gray-500 bg-white/60 px-2 py-1 rounded-full">
-											{feature.stats}
-										</span>
-									</div>
-									<p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-										{feature.description}
-									</p>
-								</div>
-
-								{/* Hover Arrow */}
-								<motion.div
-									className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100"
-									initial={{ x: 10, opacity: 0 }}
-									whileHover={{ x: 0, opacity: 1 }}
-									transition={{ duration: 0.3 }}
-								>
-									<div
-										className={`w-10 h-10 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center shadow-lg`}
+									<motion.div
+										className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}
+										initial={{ opacity: 0 }}
+										whileHover={{ opacity: 0.1 }}
+									/>
+									<motion.div
+										className={`relative w-16 h-16 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300`}
+										whileHover={{
+											scale: 1.1,
+											rotate: [0, -10, 10, 0],
+											transition: { duration: 0.3 },
+										}}
 									>
-										<svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-										</svg>
+										<feature.icon className="w-8 h-8 text-white" />
+									</motion.div>
+									<div className="relative space-y-4">
+										<div className="flex items-center justify-between">
+											<h3 className="text-xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
+												{feature.title}
+											</h3>
+											<span className="text-xs font-medium text-gray-500 bg-white/60 px-2 py-1 rounded-full">
+												{feature.stats}
+											</span>
+										</div>
+										<p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+											{feature.description}
+										</p>
 									</div>
-								</motion.div>
-							</div>
-						</motion.div>
-					))}
+									<motion.div
+										className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100"
+										initial={{ x: 10, opacity: 0 }}
+										whileHover={{ x: 0, opacity: 1 }}
+										transition={{ duration: 0.3 }}
+									>
+										<div
+											className={`w-10 h-10 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center shadow-lg`}
+										>
+											<svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+											</svg>
+										</div>
+									</motion.div>
+								</div>
+							</motion.div>
+						))
+					}
 				</motion.div>
-
-				{/* Additional Features */}
 				<motion.div
 					className="bg-gradient-to-r from-gray-900 to-blue-900 rounded-3xl p-12 text-center"
 					initial={{ opacity: 0, y: 30 }}
@@ -212,22 +201,24 @@ const FeaturesOverview = () => {
 						Built for the Modern School
 					</motion.h3>
 					<div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-						{additionalFeatures.map((item, index) => (
-							<motion.div
-								key={index}
-								className="flex flex-col items-center space-y-3 group"
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: 0.3 + index * 0.1 }}
-								whileHover={{ scale: 1.1 }}
-							>
-								<div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
-									<item.icon className="w-6 h-6 text-white" />
-								</div>
-								<span className="text-white font-medium">{item.text}</span>
-							</motion.div>
-						))}
+						{
+							additionalFeatures.map((item, index) => (
+								<motion.div
+									key={index}
+									className="flex flex-col items-center space-y-3 group"
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ delay: 0.3 + index * 0.1 }}
+									whileHover={{ scale: 1.1 }}
+								>
+									<div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
+										<item.icon className="w-6 h-6 text-white" />
+									</div>
+									<span className="text-white font-medium">{item.text}</span>
+								</motion.div>
+							))
+						}
 					</div>
 				</motion.div>
 			</div>

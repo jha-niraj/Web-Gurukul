@@ -86,27 +86,31 @@ export function MainNav() {
                             </div>
                         </Link>
                         <div className="hidden lg:flex items-center gap-4">
-                            {navigationLinks.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={`relative flex items-center gap-2 px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive(link.href)
+                            {
+                                navigationLinks.map((link) => (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={`relative flex items-center gap-2 px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive(link.href)
                                             ? "text-teal-600 dark:text-teal-400"
                                             : "text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400"
-                                        }`}
-                                >
-                                    <link.icon className="h-4 w-4" />
-                                    {link.label}
-                                    {isActive(link.href) && (
-                                        <motion.div
-                                            layoutId="activeTab"
-                                            className="absolute -bottom-[1px] left-0 right-0 h-[2px] bg-gradient-to-r from-teal-400 to-cyan-400"
-                                            initial={false}
-                                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                        />
-                                    )}
-                                </Link>
-                            ))}
+                                            }`}
+                                    >
+                                        <link.icon className="h-4 w-4" />
+                                        {link.label}
+                                        {
+                                            isActive(link.href) && (
+                                                <motion.div
+                                                    layoutId="activeTab"
+                                                    className="absolute -bottom-[1px] left-0 right-0 h-[2px] bg-gradient-to-r from-teal-400 to-cyan-400"
+                                                    initial={false}
+                                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                                />
+                                            )
+                                        }
+                                    </Link>
+                                ))
+                            }
                         </div>
                         <div className="hidden lg:flex items-center gap-4">
                             <Button
@@ -115,11 +119,13 @@ export function MainNav() {
                                 className="rounded-full cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
                                 onClick={toggleTheme}
                             >
-                                {mounted && theme === "light" ? (
-                                    <Sun className="h-5 w-5 text-yellow-500" />
-                                ) : (
-                                    <Moon className="h-5 w-5 text-slate-400" />
-                                )}
+                                {
+                                    mounted && theme === "light" ? (
+                                        <Sun className="h-5 w-5 text-yellow-500" />
+                                    ) : (
+                                        <Moon className="h-5 w-5 text-slate-400" />
+                                    )
+                                }
                             </Button>
                             <Link href="/contact">
                                 <Button className="cursor-pointer bg-gradient-to-r from-teal-500 to-cyan-500 text-white hover:from-teal-600 hover:to-cyan-600 shadow-md hover:shadow-lg transition-all duration-300">
@@ -159,31 +165,35 @@ export function MainNav() {
                                                 className="rounded-full cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
                                                 onClick={toggleTheme}
                                             >
-                                                {mounted && theme === "light" ? (
-                                                    <Sun className="h-4 w-4 text-yellow-500" />
-                                                ) : (
-                                                    <Moon className="h-4 w-4 text-slate-400" />
-                                                )}
+                                                {
+                                                    mounted && theme === "light" ? (
+                                                        <Sun className="h-4 w-4 text-yellow-500" />
+                                                    ) : (
+                                                        <Moon className="h-4 w-4 text-slate-400" />
+                                                    )
+                                                }
                                             </Button>
                                         </div>
                                     </SheetHeader>
                                     <div className="flex-1 p-6">
                                         <div className="space-y-2">
-                                            {navigationLinks.map((link) => (
-                                                <Link
-                                                    key={link.href}
-                                                    href={link.href}
-                                                    onClick={() => setIsOpen(false)}
-                                                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${isActive(link.href)
+                                            {
+                                                navigationLinks.map((link) => (
+                                                    <Link
+                                                        key={link.href}
+                                                        href={link.href}
+                                                        onClick={() => setIsOpen(false)}
+                                                        className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${isActive(link.href)
                                                             ? "text-teal-600 bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800"
                                                             : "text-gray-600 dark:text-gray-300 hover:text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/20"
-                                                        }`}
-                                                >
-                                                    <link.icon className="h-4 w-4" />
-                                                    {link.label}
-                                                    {isActive(link.href) && <Badge className="ml-auto bg-teal-500 text-white">Active</Badge>}
-                                                </Link>
-                                            ))}
+                                                            }`}
+                                                    >
+                                                        <link.icon className="h-4 w-4" />
+                                                        {link.label}
+                                                        {isActive(link.href) && <Badge className="ml-auto bg-teal-500 text-white">Active</Badge>}
+                                                    </Link>
+                                                ))
+                                            }
                                         </div>
                                         <div className="mt-8 space-y-4">
                                             <Badge
@@ -202,17 +212,19 @@ export function MainNav() {
                                         <div className="mt-8">
                                             <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 mb-4">Quick Links</h3>
                                             <div className="flex gap-3">
-                                                {socialLinks.map((social) => (
-                                                    <Link
-                                                        key={social.href}
-                                                        href={social.href}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-teal-50 dark:hover:bg-teal-900/20 hover:text-teal-600 transition-colors duration-300"
-                                                    >
-                                                        <social.icon className="h-5 w-5" />
-                                                    </Link>
-                                                ))}
+                                                {
+                                                    socialLinks.map((social) => (
+                                                        <Link
+                                                            key={social.href}
+                                                            href={social.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-teal-50 dark:hover:bg-teal-900/20 hover:text-teal-600 transition-colors duration-300"
+                                                        >
+                                                            <social.icon className="h-5 w-5" />
+                                                        </Link>
+                                                    ))
+                                                }
                                             </div>
                                         </div>
                                     </div>

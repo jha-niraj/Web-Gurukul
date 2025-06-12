@@ -57,35 +57,7 @@ const AboutPage = () => {
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-			{/* Header */}
-			<motion.nav
-				className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
-				initial={{ y: -50, opacity: 0 }}
-				animate={{ y: 0, opacity: 1 }}
-				transition={{ duration: 0.6 }}
-			>
-				<div className="flex justify-between items-center">
-					<Link href="/" className="flex items-center space-x-3">
-						<div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
-							<BookOpen className="w-7 h-7 text-white" />
-						</div>
-						<div>
-							<h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
-								EduSathi
-							</h1>
-							<p className="text-xs text-blue-600 font-medium">Smart School Management</p>
-						</div>
-					</Link>
-					<Link href="/">
-						<Button variant="ghost" className="text-gray-600 hover:text-gray-900">
-							← Back to Home
-						</Button>
-					</Link>
-				</div>
-			</motion.nav>
-
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-				{/* Hero Section */}
 				<motion.div
 					className="text-center mb-20"
 					initial={{ opacity: 0, y: 30 }}
@@ -110,8 +82,6 @@ const AboutPage = () => {
 						transparent, and accessible for every institution in Nepal.
 					</p>
 				</motion.div>
-
-				{/* Mission & Vision */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
 					<motion.div
 						initial={{ opacity: 0, x: -30 }}
@@ -131,7 +101,6 @@ const AboutPage = () => {
 							</p>
 						</div>
 					</motion.div>
-
 					<motion.div
 						initial={{ opacity: 0, x: 30 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -151,8 +120,6 @@ const AboutPage = () => {
 						</div>
 					</motion.div>
 				</div>
-
-				{/* Our Story */}
 				<motion.div
 					className="mb-20"
 					initial={{ opacity: 0, y: 30 }}
@@ -166,11 +133,10 @@ const AboutPage = () => {
 							Born from the real challenges faced by educators across Nepal
 						</p>
 					</div>
-
 					<div className="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-3xl p-12 border border-blue-100">
 						<div className="max-w-4xl mx-auto">
 							<p className="text-lg text-gray-700 leading-relaxed mb-6">
-								EduSathi was founded in 2023 by a team of educators and technologists who witnessed firsthand the
+								WebGurukul was founded in 2025 by a team of educators and technologists who witnessed firsthand the
 								administrative challenges facing schools across Nepal. From manual attendance tracking to complex fee
 								collection processes, we saw how outdated systems were holding back educational institutions.
 							</p>
@@ -188,8 +154,6 @@ const AboutPage = () => {
 						</div>
 					</div>
 				</motion.div>
-
-				{/* Our Values */}
 				<motion.div
 					className="mb-20"
 					initial={{ opacity: 0, y: 30 }}
@@ -201,29 +165,28 @@ const AboutPage = () => {
 						<h2 className="text-4xl font-bold text-gray-900 mb-6">Our Values</h2>
 						<p className="text-xl text-gray-600 max-w-3xl mx-auto">The principles that guide everything we do</p>
 					</div>
-
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-						{values.map((value, index) => (
-							<motion.div
-								key={index}
-								className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300"
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: index * 0.1 }}
-								whileHover={{ scale: 1.05 }}
-							>
-								<div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-									<value.icon className="w-8 h-8 text-white" />
-								</div>
-								<h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-								<p className="text-gray-600 leading-relaxed">{value.description}</p>
-							</motion.div>
-						))}
+						{
+							values.map((value, index) => (
+								<motion.div
+									key={index}
+									className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300"
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ delay: index * 0.1 }}
+									whileHover={{ scale: 1.05 }}
+								>
+									<div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+										<value.icon className="w-8 h-8 text-white" />
+									</div>
+									<h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+									<p className="text-gray-600 leading-relaxed">{value.description}</p>
+								</motion.div>
+							))
+						}
 					</div>
 				</motion.div>
-
-				{/* Team Section */}
 				<motion.div
 					className="mb-20"
 					initial={{ opacity: 0, y: 30 }}
@@ -237,32 +200,31 @@ const AboutPage = () => {
 							Passionate educators and technologists working together to transform education
 						</p>
 					</div>
-
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-						{teamMembers.map((member, index) => (
-							<motion.div
-								key={index}
-								className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300"
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: index * 0.1 }}
-								whileHover={{ scale: 1.05 }}
-							>
-								<img
-									src={member.image || "/placeholder.svg"}
-									alt={member.name}
-									className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-gray-100"
-								/>
-								<h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-								<p className="text-blue-600 font-medium mb-3">{member.role}</p>
-								<p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-							</motion.div>
-						))}
+						{
+							teamMembers.map((member, index) => (
+								<motion.div
+									key={index}
+									className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300"
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ delay: index * 0.1 }}
+									whileHover={{ scale: 1.05 }}
+								>
+									<img
+										src={member.image || "/placeholder.svg"}
+										alt={member.name}
+										className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-gray-100"
+									/>
+									<h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+									<p className="text-blue-600 font-medium mb-3">{member.role}</p>
+									<p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+								</motion.div>
+							))
+						}
 					</div>
 				</motion.div>
-
-				{/* CTA Section */}
 				<motion.div
 					className="text-center"
 					initial={{ opacity: 0, y: 30 }}
@@ -306,4 +268,4 @@ const AboutPage = () => {
 	)
 }
 
-export default AboutPage
+export default AboutPage;
