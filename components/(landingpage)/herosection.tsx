@@ -42,7 +42,7 @@ const HeroSection = () => {
 	}
 
 	return (
-		<section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50 overflow-hidden pt-24">
+		<section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50 overflow-hidden pt-16">
 			<div className="absolute inset-0">
 				<div className="absolute inset-0 opacity-30">
 					<div
@@ -67,7 +67,7 @@ const HeroSection = () => {
 				transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
 			/>
 			<div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-				<motion.div className="space-y-16" variants={containerVariants} initial="hidden" animate="visible">
+				<motion.div className="space-y-8" variants={containerVariants} initial="hidden" animate="visible">
 					<motion.div variants={itemVariants}>
 						<motion.div
 							className="inline-flex items-center px-5 py-2.5 rounded-full bg-teal-50/80 border border-teal-200/60 text-teal-700 text-sm font-medium backdrop-blur-sm"
