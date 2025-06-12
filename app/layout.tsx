@@ -32,6 +32,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<head>
+				<link rel="icon" href="/webgurukul.ico" />
+			</head>
 			<body
 				className={`${spaceGrotesk.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
