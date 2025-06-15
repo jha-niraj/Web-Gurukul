@@ -58,11 +58,10 @@ const quickPackages = [
 
 const PricingSection = () => {
 	return (
-		<section className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+		<section className="py-24 relative overflow-hidden">
 			<div className="absolute inset-0 bg-dot-pattern opacity-20"></div>
 			<div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-30"></div>
 			<div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-100 rounded-full blur-3xl opacity-30"></div>
-
 			<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					className="text-center mb-20"
@@ -72,14 +71,14 @@ const PricingSection = () => {
 					transition={{ duration: 0.6 }}
 				>
 					<motion.div
-						className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-teal-100 to-cyan-100 border border-teal-200 text-teal-800 text-sm font-medium mb-8"
+						className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-teal-100 to-cyan-100 border border-teal-200 text-teal-800 text-sm font-medium mb-2"
 						whileHover={{ scale: 1.05 }}
 					>
 						<Building className="w-4 h-4 mr-2" />
 						Modular Pricing - Pay Only for What You Need
 					</motion.div>
 					<motion.h2
-						className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+						className="text-4xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight"
 						initial={{ opacity: 0, scale: 0.9 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						viewport={{ once: true }}
@@ -91,7 +90,7 @@ const PricingSection = () => {
 						</span>
 					</motion.h2>
 					<motion.p
-						className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8"
+						className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8"
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
@@ -101,8 +100,6 @@ const PricingSection = () => {
 						<span className="text-teal-600 font-semibold"> Save up to 52% compared to competitors.</span>
 					</motion.p>
 				</motion.div>
-
-				{/* Quick Package Overview */}
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
 					{quickPackages.map((pkg, index) => (
 						<motion.div
@@ -214,7 +211,7 @@ const PricingSection = () => {
 							<Button
 								size="lg"
 								variant="outline"
-								className="border-2 border-white text-white hover:bg-white hover:text-teal-600 px-8 py-4 text-lg font-semibold"
+								className="border-2 border-white text-black dark:text-white hover:bg-white hover:text-teal-600 px-8 py-4 text-lg font-semibold"
 							>
 								Schedule Demo
 							</Button>
@@ -230,7 +227,7 @@ const PricingSection = () => {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 				>
-					<h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+					<h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-6">
 						Why Schools Choose WebGurukul
 					</h3>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

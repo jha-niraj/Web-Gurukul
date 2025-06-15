@@ -15,8 +15,8 @@ const navigationLinks = [
     { href: "/", label: "Home", icon: BookOpen },
     { href: "/features", label: "Features", icon: Sparkles },
     { href: "/pricing", label: "Pricing", icon: CreditCard },
-    { href: "/about", label: "About", icon: User },
-    { href: "/contact", label: "Contact", icon: Phone },
+    { href: "/aboutus", label: "About Us", icon: User },
+    { href: "/contactus", label: "Contact Us", icon: Phone },
 ]
 
 const socialLinks = [
@@ -127,7 +127,7 @@ export function MainNav() {
                                     )
                                 }
                             </Button>
-                            <Link href="/contact">
+                            <Link href="/contactus">
                                 <Button className="cursor-pointer bg-gradient-to-r from-teal-500 to-cyan-500 text-white hover:from-teal-600 hover:to-cyan-600 shadow-md hover:shadow-lg transition-all duration-300">
                                     Get Started
                                 </Button>

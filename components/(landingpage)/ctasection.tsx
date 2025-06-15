@@ -6,7 +6,7 @@ import Link from "next/link"
 
 const CTASection = () => {
 	return (
-		<section className="py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-emerald-900 relative overflow-hidden">
+		<section className="py-24 bg-gradient-to-br from-black-900 via-emerald-800 to-black-900 relative overflow-hidden">
 			<div className="absolute inset-0 opacity-10">
 				<div
 					className="absolute inset-0"
@@ -55,7 +55,7 @@ const CTASection = () => {
 						<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 							<Button
 								size="lg"
-								className="bg-white text-blue-900 hover:bg-gray-100 px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+								className="bg-white text-blue-900 hover:bg-gray-100 cursor-pointer px-10 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
 							>
 								Start Free Trial
 								<ArrowRight className="w-5 h-5 ml-2.5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -66,7 +66,7 @@ const CTASection = () => {
 								<Button
 									variant="outline"
 									size="lg"
-									className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+									className="border-2 border-white text-black	dark:text-white cursor-pointer hover:bg-white hover:text-blue-900 px-10 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
 								>
 									<Phone className="w-5 h-5 mr-2.5" />
 									Schedule Demo
@@ -99,7 +99,7 @@ const CTASection = () => {
 									viewport={{ once: true }}
 									transition={{ delay: 0.9 + index * 0.1 }}
 								>
-									<contact.icon className={`w-8 h-8 text-${contact.color}-400 mx-auto mb-3`} />
+									<contact.icon className={`w-8 h-8 text-${contact.color}-400 dark:text-white mx-auto mb-3`} />
 									<h3 className="text-white font-semibold mb-1">{contact.title}</h3>
 									<p className="text-blue-200 text-sm">{contact.subtitle}</p>
 								</motion.div>

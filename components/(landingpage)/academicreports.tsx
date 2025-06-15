@@ -14,7 +14,7 @@ const AcademicReports = () => {
 	]
 
 	return (
-		<section className="py-16 sm:py-24 bg-white">
+		<section className="py-16 sm:py-24">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 					<motion.div
@@ -26,19 +26,19 @@ const AcademicReports = () => {
 					>
 						<div>
 							<motion.div
-								className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium mb-6"
+								className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium mb-2"
 								whileHover={{ scale: 1.05 }}
 							>
 								<BarChart3 className="w-4 h-4 mr-2" />
 								Academic Reports
 							</motion.div>
-							<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+							<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
 								Professional Report Cards
 								<span className="block bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
 									& Progress Tracking
 								</span>
 							</h2>
-							<p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8">
+							<p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
 								Generate beautiful, professional report cards automatically. Track student progress with detailed
 								analytics and keep parents informed with real-time updates.
 							</p>
@@ -55,7 +55,7 @@ const AcademicReports = () => {
 										transition={{ delay: index * 0.1 }}
 									>
 										<CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0" />
-										<span className="text-gray-700 font-medium text-sm sm:text-base">{capability}</span>
+										<span className="text-black dark:text-white font-medium text-sm sm:text-base">{capability}</span>
 									</motion.div>
 								))
 							}

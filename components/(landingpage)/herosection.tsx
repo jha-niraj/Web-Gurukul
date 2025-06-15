@@ -70,13 +70,13 @@ const HeroSection = () => {
 									Transform Your School
 								</span>
 								<br />
-								<span className="text-gray-800">Management System</span>
+								<span className="text-black dark:text-white">Management System</span>
 							</motion.h1>
 							<motion.p
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.8, delay: 0.3 }}
-								className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed"
+								className="text-lg md:text-xl text-black dark:text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed"
 							>
 								Complete school management solution for Nepali schools.
 								<span className="text-teal-600 font-semibold"> Modular pricing, modern technology</span> – just
@@ -91,9 +91,9 @@ const HeroSection = () => {
 								<Link href="/pricing">
 									<Button
 										size="lg"
-										className="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white px-8 py-5 text-base font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+										className="cursor-pointer bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white px-8 py-5 text-base font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
 									>
-										Start Learning Free
+										Start Building Your School Management System
 										<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
 									</Button>
 								</Link>
@@ -112,17 +112,17 @@ const HeroSection = () => {
 								transition={{ duration: 0.8, delay: 0.5 }}
 								className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
 							>
-								<div className="bg-white/60 backdrop-blur-sm rounded-xl p-5 shadow-lg border border-teal-100">
+								<div className="bg-black dark:bg-white backdrop-blur-sm rounded-xl p-5 shadow-lg">
 									<div className="text-2xl font-bold text-teal-600 mb-1">500+</div>
-									<div className="text-gray-700 font-medium text-sm">Schools Using</div>
+									<div className="text-white dark:text-black font-medium text-sm">Schools Using</div>
 								</div>
-								<div className="bg-white/60 backdrop-blur-sm rounded-xl p-5 shadow-lg border border-teal-100">
+								<div className="bg-black dark:bg-white backdrop-blur-sm rounded-xl p-5 shadow-lg">
 									<div className="text-2xl font-bold text-teal-600 mb-1">52%</div>
-									<div className="text-gray-700 font-medium text-sm">Cost Savings</div>
+									<div className="text-white dark:text-black font-medium text-sm">Cost Savings</div>
 								</div>
-								<div className="bg-white/60 backdrop-blur-sm rounded-xl p-5 shadow-lg border border-teal-100">
+								<div className="bg-black dark:bg-white backdrop-blur-sm rounded-xl p-5 shadow-lg">
 									<div className="text-2xl font-bold text-teal-600 mb-1">NPR 700</div>
-									<div className="text-gray-700 font-medium text-sm">Starting Price</div>
+									<div className="text-white dark:text-black font-medium text-sm">Starting Price</div>
 								</div>
 							</motion.div>
 						</motion.div>

@@ -14,7 +14,7 @@ const StudentManagement = () => {
     ]
 
     return (
-        <section className="py-16 sm:py-24 bg-white">
+        <section className="py-16 sm:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     <motion.div
@@ -26,19 +26,19 @@ const StudentManagement = () => {
                     >
                         <div>
                             <motion.div
-                                className="inline-flex items-center px-4 py-2 rounded-full bg-teal-100 text-teal-800 text-sm font-medium mb-6"
+                                className="inline-flex items-center px-4 py-2 rounded-full bg-teal-100 text-teal-800 text-sm font-medium mb-2"
                                 whileHover={{ scale: 1.05 }}
                             >
                                 <Users className="w-4 h-4 mr-2" />
                                 Student Management
                             </motion.div>
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
                                 Complete Student
                                 <span className="block bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
                                     Information Management
                                 </span>
                             </h2>
-                            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8">
+                            <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
                                 Efficiently manage all student data from enrollment to graduation. Our comprehensive system handles
                                 everything from basic profiles to detailed academic records.
                             </p>
@@ -55,7 +55,7 @@ const StudentManagement = () => {
                                         transition={{ delay: index * 0.1 }}
                                     >
                                         <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0" />
-                                        <span className="text-gray-700 font-medium text-sm sm:text-base">{benefit}</span>
+                                        <span className="text-black dark:text-white font-medium text-sm sm:text-base">{benefit}</span>
                                     </motion.div>
                                 ))
                             }

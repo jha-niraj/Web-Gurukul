@@ -37,7 +37,7 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section className="relative py-16 sm:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <section className="relative py-16 sm:py-24 overflow-hidden">
             <div className="absolute inset-0 bg-dot-pattern opacity-20"></div>
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
@@ -48,19 +48,19 @@ const Testimonials = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <motion.div
-                        className="inline-flex items-center px-4 py-2 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-sm font-medium mb-6"
+                        className="inline-flex items-center px-4 py-2 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-sm font-medium mb-2"
                         whileHover={{ scale: 1.05 }}
                     >
                         <Users className="w-4 h-4 mr-2" />
                         Trusted by Educators
                     </motion.div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">
                         Loved by School
                         <span className="block bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
                             Administrators Nationwide
                         </span>
                     </h2>
-                    <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                         Join 500+ schools across Nepal who have transformed their operations with WebGurukul. See what educators are
                         saying about our platform.
                     </p>

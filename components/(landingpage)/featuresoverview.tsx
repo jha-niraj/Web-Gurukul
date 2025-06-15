@@ -77,7 +77,7 @@ const FeaturesOverview = () => {
 	}
 
 	return (
-		<section className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+		<section className="py-24">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					className="text-center mb-20"
@@ -87,14 +87,14 @@ const FeaturesOverview = () => {
 					transition={{ duration: 0.6 }}
 				>
 					<motion.div
-						className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-emerald-100 border border-blue-200 text-blue-800 text-sm font-medium mb-8"
+						className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-emerald-100 border border-blue-200 text-blue-800 text-sm font-medium mb-2"
 						whileHover={{ scale: 1.05 }}
 					>
 						<Shield className="w-4 h-4 mr-2" />
 						Complete School Management Ecosystem
 					</motion.div>
 					<motion.h2
-						className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+						className="text-4xl md:text-6xl font-bold text-black dark:text-white mb-6 leading-tight"
 						initial={{ opacity: 0, scale: 0.9 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						viewport={{ once: true }}
@@ -106,7 +106,7 @@ const FeaturesOverview = () => {
 						</span>
 					</motion.h2>
 					<motion.p
-						className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+						className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed"
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
@@ -185,7 +185,7 @@ const FeaturesOverview = () => {
 					}
 				</motion.div>
 				<motion.div
-					className="bg-gradient-to-r from-gray-900 to-blue-900 rounded-3xl p-12 text-center"
+					className="bg-gradient-to-r from-black via-emerald-900 to-black rounded-3xl p-12 text-center"
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
