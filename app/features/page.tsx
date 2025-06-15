@@ -463,8 +463,6 @@ export default function FeaturesPage() {
 						</motion.div>
 					</div>
 				</section>
-
-				{/* Portfolio Website Features */}
 				<section className="py-10">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-8">
@@ -486,43 +484,43 @@ export default function FeaturesPage() {
 								</div>
 							</motion.div>
 						</div>
-
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-							{portfolioFeatures[0].features.map((feature, index) => (
-								<motion.div
-									key={index}
-									className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
-									initial={{ opacity: 0, y: 30 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.6, delay: index * 0.1 }}
-									whileHover={{ scale: 1.02 }}
-								>
-									<div className="flex items-center mb-6">
-										<div className="bg-blue-100 rounded-xl p-3 mr-4">
-											<feature.icon className="w-6 h-6 text-blue-600" />
-										</div>
-										<div>
-											<h3 className="text-xl font-bold text-gray-900 mb-1">{feature.name}</h3>
-											<p className="text-gray-600">{feature.description}</p>
-										</div>
-									</div>
-
-									<div className="space-y-3">
-										{feature.details.map((detail, idx) => (
-											<div key={idx} className="flex items-center text-sm text-gray-700">
-												<CheckCircle className="w-4 h-4 text-emerald-500 mr-3 flex-shrink-0" />
-												{detail}
+							{
+								portfolioFeatures[0].features.map((feature, index) => (
+									<motion.div
+										key={index}
+										className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+										initial={{ opacity: 0, y: 30 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{ duration: 0.6, delay: index * 0.1 }}
+										whileHover={{ scale: 1.02 }}
+									>
+										<div className="flex items-center mb-6">
+											<div className="bg-blue-100 rounded-xl p-3 mr-4">
+												<feature.icon className="w-6 h-6 text-blue-600" />
 											</div>
-										))}
-									</div>
-								</motion.div>
-							))}
+											<div>
+												<h3 className="text-xl font-bold text-gray-900 mb-1">{feature.name}</h3>
+												<p className="text-gray-600">{feature.description}</p>
+											</div>
+										</div>
+										<div className="space-y-3">
+											{
+												feature.details.map((detail, idx) => (
+													<div key={idx} className="flex items-center text-sm text-gray-700">
+														<CheckCircle className="w-4 h-4 text-emerald-500 mr-3 flex-shrink-0" />
+														{detail}
+													</div>
+												))
+											}
+										</div>
+									</motion.div>
+								))
+							}
 						</div>
 					</div>
 				</section>
-
-				{/* Management System Features */}
 				<section className="py-20">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-8">
@@ -544,60 +542,61 @@ export default function FeaturesPage() {
 								</div>
 							</motion.div>
 						</div>
-
 						<div className="space-y-20">
-							{managementModules.map((module, moduleIndex) => (
-								<motion.div
-									key={module.id}
-									className="relative"
-									initial={{ opacity: 0, y: 30 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.6, delay: moduleIndex * 0.1 }}
-								>
-									<div className="text-center mb-12">
-										<div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-${module.color}-100 to-${module.color}-200 mb-4`}>
-											<module.icon className={`w-8 h-8 text-${module.color}-600`} />
+							{
+								managementModules.map((module, moduleIndex) => (
+									<motion.div
+										key={module.id}
+										className="relative"
+										initial={{ opacity: 0, y: 30 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{ duration: 0.6, delay: moduleIndex * 0.1 }}
+									>
+										<div className="text-center mb-12">
+											<div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-${module.color}-100 to-${module.color}-200 mb-4`}>
+												<module.icon className={`w-8 h-8 text-${module.color}-600`} />
+											</div>
+											<h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-2">{module.name}</h3>
+											<p className="text-lg text-gray-800 dark:text-gray-200 max-w-2xl mx-auto">{module.description}</p>
 										</div>
-										<h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-2">{module.name}</h3>
-										<p className="text-lg text-gray-800 dark:text-gray-200 max-w-2xl mx-auto">{module.description}</p>
-									</div>
-
-									<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-										{module.features.map((feature, featureIndex) => (
-											<motion.div
-												key={featureIndex}
-												className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300"
-												whileHover={{ scale: 1.02 }}
-											>
-												<div className="flex items-center mb-4">
-													<div className={`bg-${module.color}-100 rounded-lg p-2 mr-3`}>
-														<feature.icon className={`w-5 h-5 text-${module.color}-600`} />
-													</div>
-													<div>
-														<h4 className="font-semibold text-gray-900">{feature.name}</h4>
-														<p className="text-sm text-gray-600">{feature.description}</p>
-													</div>
-												</div>
-
-												<div className="space-y-2">
-													{feature.details.map((detail, idx) => (
-														<div key={idx} className="flex items-start text-xs text-gray-700">
-															<div className="w-1 h-1 bg-gray-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>
-															{detail}
+										<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+											{
+												module.features.map((feature, featureIndex) => (
+													<motion.div
+														key={featureIndex}
+														className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300"
+														whileHover={{ scale: 1.02 }}
+													>
+														<div className="flex items-center mb-4">
+															<div className={`bg-${module.color}-100 rounded-lg p-2 mr-3`}>
+																<feature.icon className={`w-5 h-5 text-${module.color}-600`} />
+															</div>
+															<div>
+																<h4 className="font-semibold text-gray-900">{feature.name}</h4>
+																<p className="text-sm text-gray-600">{feature.description}</p>
+															</div>
 														</div>
-													))}
-												</div>
-											</motion.div>
-										))}
-									</div>
-								</motion.div>
-							))}
+														<div className="space-y-2">
+															{
+																feature.details.map((detail, idx) => (
+																	<div key={idx} className="flex items-start text-xs text-gray-700">
+																		<div className="w-1 h-1 bg-gray-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>
+																		{detail}
+																	</div>
+																))
+															}
+														</div>
+													</motion.div>
+												))
+											}
+										</div>
+									</motion.div>
+								))
+							}
 						</div>
 					</div>
 				</section>
-
-				{/* Feature Highlights */}
 				<section className="py-20 bg-gradient-to-br from-black via-emerald-900 to-black">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center mb-16">
@@ -615,51 +614,50 @@ export default function FeaturesPage() {
 								</p>
 							</motion.div>
 						</div>
-
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-							{[
-								{
-									icon: Smartphone,
-									title: "Mobile-First Design",
-									description: "Works perfectly on all devices - phones, tablets, and desktops"
-								},
-								{
-									icon: Shield,
-									title: "Secure & Reliable",
-									description: "Bank-level security with automated backups and data protection"
-								},
-								{
-									icon: Clock,
-									title: "24/7 Support",
-									description: "Local Nepali support team available whenever you need help"
-								},
-								{
-									icon: Star,
-									title: "Proven Results",
-									description: "Trusted by 500+ schools across Nepal with 99% satisfaction rate"
-								}
-							].map((highlight, index) => (
-								<motion.div
-									key={index}
-									className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center"
-									initial={{ opacity: 0, y: 30 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.6, delay: index * 0.1 }}
-									whileHover={{ scale: 1.05 }}
-								>
-									<div className="bg-teal-100 rounded-xl p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-										<highlight.icon className="w-8 h-8 text-teal-600" />
-									</div>
-									<h3 className="text-lg font-bold text-gray-900 mb-2">{highlight.title}</h3>
-									<p className="text-gray-600 text-sm">{highlight.description}</p>
-								</motion.div>
-							))}
+							{
+								[
+									{
+										icon: Smartphone,
+										title: "Mobile-First Design",
+										description: "Works perfectly on all devices - phones, tablets, and desktops"
+									},
+									{
+										icon: Shield,
+										title: "Secure & Reliable",
+										description: "Bank-level security with automated backups and data protection"
+									},
+									{
+										icon: Clock,
+										title: "24/7 Support",
+										description: "Local Nepali support team available whenever you need help"
+									},
+									{
+										icon: Star,
+										title: "Proven Results",
+										description: "Trusted by 500+ schools across Nepal with 99% satisfaction rate"
+									}
+								].map((highlight, index) => (
+									<motion.div
+										key={index}
+										className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center"
+										initial={{ opacity: 0, y: 30 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{ duration: 0.6, delay: index * 0.1 }}
+										whileHover={{ scale: 1.05 }}
+									>
+										<div className="bg-teal-100 rounded-xl p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+											<highlight.icon className="w-8 h-8 text-teal-600" />
+										</div>
+										<h3 className="text-lg font-bold text-gray-900 mb-2">{highlight.title}</h3>
+										<p className="text-gray-600 text-sm">{highlight.description}</p>
+									</motion.div>
+								))
+							}
 						</div>
 					</div>
 				</section>
-
-				{/* CTA Section */}
 				<section className="py-20">
 					<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 						<motion.div

@@ -10,6 +10,7 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import { submitContactForm } from "@/actions/contact.action"
 import SmoothScroll from "@/components/smoothscroll"
+import { Label } from "@/components/ui/label"
 
 const ContactPage = () => {
 	const [formData, setFormData] = useState({
@@ -97,13 +98,13 @@ const ContactPage = () => {
 										>
 											<CheckCircle className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
 											<h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-											<p className="text-gray-600">We'll get back to you within 24 hours.</p>
+											<p className="text-gray-600">We'll get back to you within 2-3 hours.</p>
 										</motion.div>
 									) : (
 										<form onSubmit={handleSubmit} className="space-y-6">
 											<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 												<div>
-													<label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+													<Label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</Label>
 													<Input
 														type="text"
 														name="name"
@@ -115,7 +116,7 @@ const ContactPage = () => {
 													/>
 												</div>
 												<div>
-													<label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+													<Label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</Label>
 													<Input
 														type="email"
 														name="email"
@@ -129,7 +130,7 @@ const ContactPage = () => {
 											</div>
 											<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 												<div>
-													<label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+													<Label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</Label>
 													<Input
 														type="tel"
 														name="phone"
@@ -140,7 +141,7 @@ const ContactPage = () => {
 													/>
 												</div>
 												<div>
-													<label className="block text-sm font-medium text-gray-700 mb-2">School Name</label>
+													<Label className="block text-sm font-medium text-gray-700 mb-2">School Name</Label>
 													<Input
 														type="text"
 														name="school"
@@ -152,7 +153,7 @@ const ContactPage = () => {
 												</div>
 											</div>
 											<div>
-												<label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+												<Label className="block text-sm font-medium text-gray-700 mb-2">Message *</Label>
 												<Textarea
 													name="message"
 													value={formData.message}
@@ -277,4 +278,4 @@ const ContactPage = () => {
 	)
 }
 
-export default ContactPage
+export default ContactPage;
