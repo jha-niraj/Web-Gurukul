@@ -7,8 +7,9 @@ import {
 	Calendar, GraduationCap, Library, Truck, Package, Shield, Clock,
 	CheckCircle, ArrowRight, Star, Zap, Crown, Smartphone, Monitor,
 	Camera, Mail, Phone, Bell, TrendingUp, BarChart3, PieChart,
-	CreditCard, Receipt, DollarSign, Target, Award, UserCheck
+	Receipt, DollarSign, Target, Award, UserCheck
 } from "lucide-react"
+import SmoothScroll from "@/components/smoothscroll"
 
 const portfolioFeatures = [
 	{
@@ -436,263 +437,264 @@ const managementModules = [
 
 export default function FeaturesPage() {
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-teal-50">
-			{/* Header */}
-			<section className="pt-32 pb-20">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-					>
-						<Badge className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white mb-6">
-							Complete Feature Overview
-						</Badge>
-						<h1 className="text-4xl md:text-6xl font-bold mb-6">
-							<span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
-								Everything Your School
-							</span>
-							<br />
-							<span className="text-gray-800">Needs to Succeed</span>
-						</h1>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-							From professional website presence to complete school management -
-							discover all the features that make WebGurukul the perfect choice for your institution.
-						</p>
-					</motion.div>
-				</div>
-			</section>
-
-			{/* Portfolio Website Features */}
-			<section className="py-20">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
+		<SmoothScroll>
+			<div className="min-h-screen">
+				<section className="pt-40">
+					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
+							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6 }}
 						>
-							<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-								Professional School Website
-							</h2>
-							<p className="text-lg text-gray-600 mb-8">
-								Create a stunning online presence for your school
-							</p>
-							<div className="inline-flex items-center bg-blue-50 rounded-full px-6 py-3 border border-blue-200">
-								<Building className="w-5 h-5 text-blue-600 mr-2" />
-								<span className="text-blue-800 font-semibold">Portfolio Website Features</span>
-							</div>
-						</motion.div>
-					</div>
-
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-						{portfolioFeatures[0].features.map((feature, index) => (
-							<motion.div
-								key={index}
-								className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
-								initial={{ opacity: 0, y: 30 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.6, delay: index * 0.1 }}
-								whileHover={{ scale: 1.02 }}
-							>
-								<div className="flex items-center mb-6">
-									<div className="bg-blue-100 rounded-xl p-3 mr-4">
-										<feature.icon className="w-6 h-6 text-blue-600" />
-									</div>
-									<div>
-										<h3 className="text-xl font-bold text-gray-900 mb-1">{feature.name}</h3>
-										<p className="text-gray-600">{feature.description}</p>
-									</div>
-								</div>
-
-								<div className="space-y-3">
-									{feature.details.map((detail, idx) => (
-										<div key={idx} className="flex items-center text-sm text-gray-700">
-											<CheckCircle className="w-4 h-4 text-emerald-500 mr-3 flex-shrink-0" />
-											{detail}
-										</div>
-									))}
-								</div>
-							</motion.div>
-						))}
-					</div>
-				</div>
-			</section>
-
-			{/* Management System Features */}
-			<section className="py-20 bg-white">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.6 }}
-						>
-							<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-								School Management System Modules
-							</h2>
-							<p className="text-lg text-gray-600 mb-8">
-								Comprehensive features to manage every aspect of your school
-							</p>
-							<div className="inline-flex items-center bg-emerald-50 rounded-full px-6 py-3 border border-emerald-200">
-								<Zap className="w-5 h-5 text-emerald-600 mr-2" />
-								<span className="text-emerald-800 font-semibold">10 Powerful Modules Available</span>
-							</div>
-						</motion.div>
-					</div>
-
-					<div className="space-y-20">
-						{managementModules.map((module, moduleIndex) => (
-							<motion.div
-								key={module.id}
-								className="relative"
-								initial={{ opacity: 0, y: 30 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.6, delay: moduleIndex * 0.1 }}
-							>
-								<div className="text-center mb-12">
-									<div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-${module.color}-100 to-${module.color}-200 mb-4`}>
-										<module.icon className={`w-8 h-8 text-${module.color}-600`} />
-									</div>
-									<h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{module.name}</h3>
-									<p className="text-lg text-gray-600 max-w-2xl mx-auto">{module.description}</p>
-								</div>
-
-								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-									{module.features.map((feature, featureIndex) => (
-										<motion.div
-											key={featureIndex}
-											className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300"
-											whileHover={{ scale: 1.02 }}
-										>
-											<div className="flex items-center mb-4">
-												<div className={`bg-${module.color}-100 rounded-lg p-2 mr-3`}>
-													<feature.icon className={`w-5 h-5 text-${module.color}-600`} />
-												</div>
-												<div>
-													<h4 className="font-semibold text-gray-900">{feature.name}</h4>
-													<p className="text-sm text-gray-600">{feature.description}</p>
-												</div>
-											</div>
-
-											<div className="space-y-2">
-												{feature.details.map((detail, idx) => (
-													<div key={idx} className="flex items-start text-xs text-gray-700">
-														<div className="w-1 h-1 bg-gray-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>
-														{detail}
-													</div>
-												))}
-											</div>
-										</motion.div>
-									))}
-								</div>
-							</motion.div>
-						))}
-					</div>
-				</div>
-			</section>
-
-			{/* Feature Highlights */}
-			<section className="py-20 bg-gradient-to-br from-teal-50 to-emerald-50">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.6 }}
-						>
-							<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-								Why Choose WebGurukul?
-							</h2>
-							<p className="text-lg text-gray-600">
-								Built specifically for Nepali schools with modern technology
+							<Badge className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white mb-2">
+								Complete Feature Overview
+							</Badge>
+							<h1 className="text-4xl md:text-6xl font-bold mb-6">
+								<span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+									Everything Your School
+								</span>
+								<br />
+								<span className="text-black dark:text-white">Needs to Succeed</span>
+							</h1>
+							<p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+								From professional website presence to complete school management -
+								discover all the features that make WebGurukul the perfect choice for your institution.
 							</p>
 						</motion.div>
 					</div>
+				</section>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-						{[
-							{
-								icon: Smartphone,
-								title: "Mobile-First Design",
-								description: "Works perfectly on all devices - phones, tablets, and desktops"
-							},
-							{
-								icon: Shield,
-								title: "Secure & Reliable",
-								description: "Bank-level security with automated backups and data protection"
-							},
-							{
-								icon: Clock,
-								title: "24/7 Support",
-								description: "Local Nepali support team available whenever you need help"
-							},
-							{
-								icon: Star,
-								title: "Proven Results",
-								description: "Trusted by 500+ schools across Nepal with 99% satisfaction rate"
-							}
-						].map((highlight, index) => (
+				{/* Portfolio Website Features */}
+				<section className="py-10">
+					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+						<div className="text-center mb-8">
 							<motion.div
-								key={index}
-								className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center"
-								initial={{ opacity: 0, y: 30 }}
+								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
-								transition={{ duration: 0.6, delay: index * 0.1 }}
-								whileHover={{ scale: 1.05 }}
+								transition={{ duration: 0.6 }}
 							>
-								<div className="bg-teal-100 rounded-xl p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-									<highlight.icon className="w-8 h-8 text-teal-600" />
+								<h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+									Professional School Website
+								</h2>
+								<p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+									Create a stunning online presence for your school
+								</p>
+								<div className="inline-flex items-center bg-blue-50 rounded-full px-6 py-3 border border-blue-200">
+									<Building className="w-5 h-5 text-blue-600 mr-2" />
+									<span className="text-blue-800 font-semibold">Portfolio Website Features</span>
 								</div>
-								<h3 className="text-lg font-bold text-gray-900 mb-2">{highlight.title}</h3>
-								<p className="text-gray-600 text-sm">{highlight.description}</p>
 							</motion.div>
-						))}
-					</div>
-				</div>
-			</section>
-
-			{/* CTA Section */}
-			<section className="py-20">
-				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.6 }}
-						className="bg-gradient-to-r from-teal-500 to-emerald-500 rounded-3xl p-12 text-white"
-					>
-						<h2 className="text-3xl md:text-4xl font-bold mb-4">
-							Ready to Transform Your School?
-						</h2>
-						<p className="text-xl text-teal-100 mb-8">
-							Start with a free trial and see how WebGurukul can revolutionize your school management
-						</p>
-						<div className="flex flex-col sm:flex-row gap-4 justify-center">
-							<motion.button
-								className="bg-white text-teal-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
-							>
-								Start Free Trial
-							</motion.button>
-							<motion.button
-								className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-teal-600 transition-colors"
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
-							>
-								Schedule Demo
-							</motion.button>
 						</div>
-					</motion.div>
-				</div>
-			</section>
-		</div>
+
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+							{portfolioFeatures[0].features.map((feature, index) => (
+								<motion.div
+									key={index}
+									className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+									initial={{ opacity: 0, y: 30 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ duration: 0.6, delay: index * 0.1 }}
+									whileHover={{ scale: 1.02 }}
+								>
+									<div className="flex items-center mb-6">
+										<div className="bg-blue-100 rounded-xl p-3 mr-4">
+											<feature.icon className="w-6 h-6 text-blue-600" />
+										</div>
+										<div>
+											<h3 className="text-xl font-bold text-gray-900 mb-1">{feature.name}</h3>
+											<p className="text-gray-600">{feature.description}</p>
+										</div>
+									</div>
+
+									<div className="space-y-3">
+										{feature.details.map((detail, idx) => (
+											<div key={idx} className="flex items-center text-sm text-gray-700">
+												<CheckCircle className="w-4 h-4 text-emerald-500 mr-3 flex-shrink-0" />
+												{detail}
+											</div>
+										))}
+									</div>
+								</motion.div>
+							))}
+						</div>
+					</div>
+				</section>
+
+				{/* Management System Features */}
+				<section className="py-20">
+					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+						<div className="text-center mb-8">
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.6 }}
+							>
+								<h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+									School Management System Modules
+								</h2>
+								<p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+									Comprehensive features to manage every aspect of your school
+								</p>
+								<div className="inline-flex items-center bg-emerald-50 rounded-full px-6 py-3 border border-emerald-200">
+									<Zap className="w-5 h-5 text-emerald-600 mr-2" />
+									<span className="text-emerald-800 font-semibold">10 Powerful Modules Available</span>
+								</div>
+							</motion.div>
+						</div>
+
+						<div className="space-y-20">
+							{managementModules.map((module, moduleIndex) => (
+								<motion.div
+									key={module.id}
+									className="relative"
+									initial={{ opacity: 0, y: 30 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ duration: 0.6, delay: moduleIndex * 0.1 }}
+								>
+									<div className="text-center mb-12">
+										<div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-${module.color}-100 to-${module.color}-200 mb-4`}>
+											<module.icon className={`w-8 h-8 text-${module.color}-600`} />
+										</div>
+										<h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-2">{module.name}</h3>
+										<p className="text-lg text-gray-800 dark:text-gray-200 max-w-2xl mx-auto">{module.description}</p>
+									</div>
+
+									<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+										{module.features.map((feature, featureIndex) => (
+											<motion.div
+												key={featureIndex}
+												className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300"
+												whileHover={{ scale: 1.02 }}
+											>
+												<div className="flex items-center mb-4">
+													<div className={`bg-${module.color}-100 rounded-lg p-2 mr-3`}>
+														<feature.icon className={`w-5 h-5 text-${module.color}-600`} />
+													</div>
+													<div>
+														<h4 className="font-semibold text-gray-900">{feature.name}</h4>
+														<p className="text-sm text-gray-600">{feature.description}</p>
+													</div>
+												</div>
+
+												<div className="space-y-2">
+													{feature.details.map((detail, idx) => (
+														<div key={idx} className="flex items-start text-xs text-gray-700">
+															<div className="w-1 h-1 bg-gray-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>
+															{detail}
+														</div>
+													))}
+												</div>
+											</motion.div>
+										))}
+									</div>
+								</motion.div>
+							))}
+						</div>
+					</div>
+				</section>
+
+				{/* Feature Highlights */}
+				<section className="py-20 bg-gradient-to-br from-black via-emerald-900 to-black">
+					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+						<div className="text-center mb-16">
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.6 }}
+							>
+								<h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+									Why Choose WebGurukul?
+								</h2>
+								<p className="text-lg text-gray-300">
+									Built specifically for Nepali schools with modern technology
+								</p>
+							</motion.div>
+						</div>
+
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+							{[
+								{
+									icon: Smartphone,
+									title: "Mobile-First Design",
+									description: "Works perfectly on all devices - phones, tablets, and desktops"
+								},
+								{
+									icon: Shield,
+									title: "Secure & Reliable",
+									description: "Bank-level security with automated backups and data protection"
+								},
+								{
+									icon: Clock,
+									title: "24/7 Support",
+									description: "Local Nepali support team available whenever you need help"
+								},
+								{
+									icon: Star,
+									title: "Proven Results",
+									description: "Trusted by 500+ schools across Nepal with 99% satisfaction rate"
+								}
+							].map((highlight, index) => (
+								<motion.div
+									key={index}
+									className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center"
+									initial={{ opacity: 0, y: 30 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ duration: 0.6, delay: index * 0.1 }}
+									whileHover={{ scale: 1.05 }}
+								>
+									<div className="bg-teal-100 rounded-xl p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+										<highlight.icon className="w-8 h-8 text-teal-600" />
+									</div>
+									<h3 className="text-lg font-bold text-gray-900 mb-2">{highlight.title}</h3>
+									<p className="text-gray-600 text-sm">{highlight.description}</p>
+								</motion.div>
+							))}
+						</div>
+					</div>
+				</section>
+
+				{/* CTA Section */}
+				<section className="py-20">
+					<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.6 }}
+							className="bg-gradient-to-r from-teal-500 to-emerald-500 rounded-3xl p-12 text-white"
+						>
+							<h2 className="text-3xl md:text-4xl font-bold mb-4">
+								Ready to Transform Your School?
+							</h2>
+							<p className="text-xl text-teal-100 mb-8">
+								Start with a free trial and see how WebGurukul can revolutionize your school management
+							</p>
+							<div className="flex flex-col sm:flex-row gap-4 justify-center">
+								<motion.button
+									className="bg-white text-teal-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+									whileHover={{ scale: 1.05 }}
+									whileTap={{ scale: 0.95 }}
+								>
+									Start Free Trial
+								</motion.button>
+								<motion.button
+									className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-teal-600 transition-colors"
+									whileHover={{ scale: 1.05 }}
+									whileTap={{ scale: 0.95 }}
+								>
+									Schedule Demo
+								</motion.button>
+							</div>
+						</motion.div>
+					</div>
+				</section>
+			</div>
+		</SmoothScroll>
 	)
 } 
