@@ -11,168 +11,169 @@ import {
 	Star, Crown, Zap, Building, Phone, Mail, ChevronDown, ChevronUp
 } from "lucide-react"
 import SmoothScroll from "@/components/smoothscroll"
+import { useRouter } from "next/navigation"
 
 const baseSystem = {
-	setupCost: 15000,
+	setupCost: 5000,
 	monthlyBase: 0,
 	features: [
-		"User authentication & dashboard",
+		"Shared cloud infrastructure",
+		"Multi-tenant architecture",
 		"Basic admin panel",
-		"Database setup",
 		"Initial training & support"
 	]
 }
 
 const modules = [
 	{
-		id: 'student',
-		name: 'Student Information Management',
-		setup: 3000,
-		monthly: 200,
-		icon: Users,
-		essential: true,
-		features: [
-			'Student profiles & enrollment',
-			'Photo management',
-			'Basic student records',
-			'Contact information',
-			'Emergency contacts'
+		"id": "student",
+		"name": "Student Information Management",
+		"setup": 1000,
+		"monthly": 800,
+		"icon": Users,
+		"essential": true,
+		"features": [
+			"Student profiles & enrollment",
+			"Photo management",
+			"Basic student records",
+			"Contact information",
+			"Emergency contacts"
 		]
 	},
 	{
-		id: 'billing',
-		name: 'Billing & Fee Management',
-		setup: 4000,
-		monthly: 300,
-		icon: Calculator,
-		essential: true,
-		features: [
-			'Fee structure management',
-			'Automated bill generation',
-			'Payment tracking',
-			'Receipt generation',
-			'Late fee calculations',
-			'Multiple payment methods'
+		"id": "billing",
+		"name": "Billing & Fee Management",
+		"setup": 1500,
+		"monthly": 1000,
+		"icon": Calculator,
+		"essential": true,
+		"features": [
+			"Fee structure management",
+			"Automated bill generation",
+			"Payment tracking",
+			"Receipt generation",
+			"Late fee calculations",
+			"Multiple payment methods"
 		]
 	},
 	{
-		id: 'academic',
-		name: 'Academic Management',
-		setup: 3500,
-		monthly: 250,
-		icon: BookOpen,
-		essential: true,
-		features: [
-			'Class management',
-			'Subject allocation',
-			'Timetable creation',
-			'Grade management',
-			'Teacher assignment'
+		"id": "academic",
+		"name": "Academic Management",
+		"setup": 1200,
+		"monthly": 900,
+		"icon": BookOpen,
+		"essential": true,
+		"features": [
+			"Class management",
+			"Subject allocation",
+			"Timetable creation",
+			"Grade management",
+			"Teacher assignment"
 		]
 	},
 	{
-		id: 'reports',
-		name: 'Reports & Analytics',
-		setup: 2500,
-		monthly: 200,
-		icon: FileText,
-		essential: true,
-		features: [
-			'Student progress reports',
-			'Financial reports',
-			'Attendance analytics',
-			'Custom report generation',
-			'Export to PDF/Excel'
+		"id": "reports",
+		"name": "Reports & Analytics",
+		"setup": 800,
+		"monthly": 700,
+		"icon": FileText,
+		"essential": true,
+		"features": [
+			"Student progress reports",
+			"Financial reports",
+			"Attendance analytics",
+			"Custom report generation",
+			"Export to PDF/Excel"
 		]
 	},
 	{
-		id: 'communication',
-		name: 'Communication System',
-		setup: 2000,
-		monthly: 150,
-		icon: MessageSquare,
-		essential: true,
-		features: [
-			'SMS notifications',
-			'Email notifications',
-			'Parent communication',
-			'Announcements',
-			'Event notifications'
+		"id": "communication",
+		"name": "Communication System",
+		"setup": 500,
+		"monthly": 500,
+		"icon": MessageSquare,
+		"essential": true,
+		"features": [
+			"SMS notifications",
+			"Email notifications",
+			"Parent communication",
+			"Announcements",
+			"Event notifications"
 		]
 	},
 	{
-		id: 'attendance',
-		name: 'Attendance Management',
-		setup: 2500,
-		monthly: 200,
-		icon: Calendar,
-		essential: false,
-		features: [
-			'Daily attendance tracking',
-			'Attendance reports',
-			'Parent notifications',
-			'Leave management',
-			'Attendance analytics'
+		"id": "attendance",
+		"name": "Attendance Management",
+		"setup": 800,
+		"monthly": 600,
+		"icon": Calendar,
+		"essential": false,
+		"features": [
+			"Daily attendance tracking",
+			"Attendance reports",
+			"Parent notifications",
+			"Leave management",
+			"Attendance analytics"
 		]
 	},
 	{
-		id: 'examination',
-		name: 'Examination Management',
-		setup: 3000,
-		monthly: 250,
-		icon: GraduationCap,
-		essential: false,
-		features: [
-			'Exam scheduling',
-			'Result entry system',
-			'Mark sheet generation',
-			'Grade calculations',
-			'Rank calculations'
+		"id": "examination",
+		"name": "Examination Management",
+		"setup": 1000,
+		"monthly": 750,
+		"icon": GraduationCap,
+		"essential": false,
+		"features": [
+			"Exam scheduling",
+			"Result entry system",
+			"Mark sheet generation",
+			"Grade calculations",
+			"Rank calculations"
 		]
 	},
 	{
-		id: 'library',
-		name: 'Library Management',
-		setup: 2000,
-		monthly: 150,
-		icon: Library,
-		essential: false,
-		features: [
-			'Book inventory',
-			'Issue/return tracking',
-			'Fine management',
-			'Digital catalog',
-			'Member management'
+		"id": "library",
+		"name": "Library Management",
+		"setup": 600,
+		"monthly": 450,
+		"icon": Library,
+		"essential": false,
+		"features": [
+			"Book inventory",
+			"Issue/return tracking",
+			"Fine management",
+			"Digital catalog",
+			"Member management"
 		]
 	},
 	{
-		id: 'transport',
-		name: 'Transport Management',
-		setup: 2500,
-		monthly: 200,
-		icon: Truck,
-		essential: false,
-		features: [
-			'Route management',
-			'Vehicle tracking',
-			'Driver management',
-			'Transport fees',
-			'Route optimization'
+		"id": "transport",
+		"name": "Transport Management",
+		"setup": 800,
+		"monthly": 600,
+		"icon": Truck,
+		"essential": false,
+		"features": [
+			"Route management",
+			"Vehicle tracking",
+			"Driver management",
+			"Transport fees",
+			"Route optimization"
 		]
 	},
 	{
-		id: 'inventory',
-		name: 'Inventory Management',
-		setup: 2000,
-		monthly: 150,
-		icon: Package,
-		essential: false,
-		features: [
-			'Asset tracking',
-			'Supplies management',
-			'Maintenance records',
-			'Purchase orders',
-			'Stock alerts'
+		"id": "inventory",
+		"name": "Inventory Management",
+		"setup": 600,
+		"monthly": 450,
+		"icon": Package,
+		"essential": false,
+		"features": [
+			"Asset tracking",
+			"Supplies management",
+			"Maintenance records",
+			"Purchase orders",
+			"Stock alerts"
 		]
 	}
 ]
@@ -182,32 +183,39 @@ const preConfiguredPackages = [
 		name: 'Starter Package',
 		subtitle: 'Perfect for Small Schools',
 		moduleIds: ['student', 'billing', 'reports'],
+		setupTotal: 8000,    // 5000 + 1000 + 1500 + 800
+		monthlyTotal: 2800,  // 800 + 1000 + 700
 		popular: true,
 		icon: Zap,
 		color: 'emerald',
-		annualDiscount: 0.17
+		annualDiscount: 0.15
 	},
 	{
 		name: 'Standard Package',
 		subtitle: 'Recommended for Medium Schools',
 		moduleIds: ['student', 'billing', 'academic', 'reports', 'communication'],
+		setupTotal: 12000,   // 5000 + 1000 + 1500 + 1200 + 800 + 500
+		monthlyTotal: 3500,  // 800 + 1000 + 900 + 700 + 500
 		popular: false,
 		icon: Star,
 		color: 'blue',
-		annualDiscount: 0.17
+		annualDiscount: 0.15
 	},
 	{
 		name: 'Professional Package',
 		subtitle: 'For Large Schools',
 		moduleIds: ['student', 'billing', 'academic', 'reports', 'communication', 'attendance', 'examination'],
+		setupTotal: 18000,
+		monthlyTotal: 4500,
 		popular: false,
 		icon: Crown,
 		color: 'purple',
-		annualDiscount: 0.17
+		annualDiscount: 0.15
 	}
 ]
 
 export default function PricingPage() {
+	const router = useRouter();
 	const [selectedModules, setSelectedModules] = useState<string[]>(['student', 'billing', 'reports'])
 	const [isAnnual, setIsAnnual] = useState(false)
 	const [expandedPackage, setExpandedPackage] = useState<string | null>(null)
@@ -597,6 +605,7 @@ export default function PricingPage() {
 							<div className="mt-12">
 								<Button
 									size="lg"
+									onClick={() => router.push("/contactus")}
 									className="cursor-pointer bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold"
 								>
 									Get Complete Package Quote
